@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.mwp.cordova.update" version="0.0.1" author="wubaiqing">
+    <!-- 扩展名称 -->
+    <name>MWPUpdate</name>
+
+    <!-- 介绍 -->
+    <description>Cordova MWPUpdate Plugin</description>
+
+    <!-- 关键字 -->
+    <keywords>cordova, mwp, mwpupdate</keywords>
+
+    <!-- cordova版本号必须大于3.0.0 -->
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <!-- JS模块名称，以及声明使用对象 -->
+    <js-module src="www/update.js" name="CDVMWPUpdate">
+        <clobbers target="window.MWP" />
+    </js-module>
+
+    <!-- IOS平台 -->
+    <platform name="ios">
+        <!-- 配置文件路径 -->
+        <config-file target="config.xml" parent="/*">
+            <!-- 模块特征，JS调用名称 -->
+            <feature name="CDVMWPUpdate">
+                <!-- ios文件包名称 -->
+                <param name="ios-package" value="CDVMWPUpdate"/>
+            </feature>
+        </config-file>
+
+        <!-- 引用头文件，实现文件 -->
+        <header-file src="src/ios/CDVMWPUpdate.h" />
+        <source-file src="src/ios/CDVMWPUpdate.m" />
+    </platform>
+</plugin>
