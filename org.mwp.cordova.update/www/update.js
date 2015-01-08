@@ -15,8 +15,8 @@ var exec = require('cordova/exec');
 var MWP = function() {};
 
 // 调用Objective-C -> CDVMWPUpdate.m -> update方法
-MWP.update = function() {
-    exec(null, null, "CDVMWPUpdate", "update", []);
+MWP.update = function(url) {
+    exec(null, null, "CDVMWPUpdate", "update", [url]);
 };
 
 // 导入扩展
